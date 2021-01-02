@@ -214,7 +214,8 @@ article img{
     /*display: inline-block;
     /*text-align: left;*/
     vertical-align: middle;
-    margin:30px;
+    margin-top:30px;
+    width:100%;
     
 }
 #contact a{

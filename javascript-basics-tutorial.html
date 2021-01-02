@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/article look.css">
+    <link rel="stylesheet"
+      href="css/highlights/atom-one-dark.css">
+    <title>JavaScript Basics Tutorial - The Shaman</title>
+</head>
+<body>
+    <style>
+        :root {
+            --banner-url:url("../img/05.jpg")
+        }
+        #banner{
+            background: var(--banner-url);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <header></header>
+    <main>
+        <section>
+            <a href="#" id="up">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+            <div id="banner">
+                <span class="cover"></span>
+                <div>
+                    <div>
+                        <h1>JavaScript Basics Tutorial</h1>
+                    </div>
+                </div>
+            </div>
+            <article><p>After you finished learning HTML and CSS it's useful to make your page more interactive. In this point you encounter the king of front-end websites - JavaScript. For those who did something in C++ or C# it won't be hard - JS is weird, but while learning it, you will discover that JS is more simple than these. </p>
+<h1>How to attach scripts to your page</h1>
+<p>To use JS on your website - you need to add script mark to your website<br>
+For training, in your folder create index.html file:
+<pre><code><<!---->!DOCTYPE html>
+<<!---->html lang="en">
+<<!---->head>
+    <<!---->meta charset="UTF-8">
+    <<!---->meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <<!---->title>My first JavaScript code!<<!---->/title>
+<<!---->/head>
+<<!---->body>
+    
+<<!---->/body>
+<<!---->/html></code></pre><br>
+Now we shoud add <<!---->script> to your file. You can add it to <<!---->head> or end of <<!---->body><br><br>
+<pre><code><<!---->!DOCTYPE html>
+    <<!---->html lang="en">
+    <<!---->head>
+        <<!---->meta charset="UTF-8">
+        <<!---->meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <<!---->title>My first JavaScript code!<<!---->/title>
+        <<!---->script><<!---->/script> <<!---->!-- It will work -->
+    <<!---->/head>
+    <<!---->body>
+        <<!---->!-- Your html -->
+        <<!---->script><<!---->/script> <<!---->!-- It will work too -->
+    <<!---->/body>
+<<!---->/html></code></pre><br>
+Your code can be placed in many ways. You can add it in index.html like that:<br><br>
+<pre><code><<!---->!DOCTYPE html>
+    <<!---->html lang="en">
+    <<!---->head>
+        <<!---->meta charset="UTF-8">
+        <<!---->meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <<!---->title>My first JavaScript code!<<!---->/title>
+    <<!---->/head>
+    <<!---->body>
+        <<!---->script>
+            // your code goes here
+        <<!---->/script>
+    <<!---->/body>
+<<!---->/html></code></pre>
+<br>Or you can add it in seperate file by adding src atrribute to <<!---->script>:
+<br><br>
+<pre><code><<!---->!DOCTYPE html>
+    <<!---->html lang="en">
+    <<!---->head>
+        <<!---->meta charset="UTF-8">
+        <<!---->meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <<!---->title>My first JavaScript code!<<!---->/title>
+    <<!---->/head>
+    <<!---->body>
+        <<!---->script src="script.js"><<!---->/script>
+    <<!---->/body>
+<<!---->/html></code></pre>
+<br>And your script.js file:<br><br>
+<pre><code>// Your code in seperate file</code></pre><br>
+Which should you use? That depends. If you want to use your script in many pages, then you shoud embed your code in seperate file (you can also copy your code to all of your pages, but it's just a waste of your place on your server). If you want your page to load quickly - you shoud add your code inside index.html - every time your page loads a new file it takes some time. 
+</p>
+<h1>"Async" and "defer" attributes</h1>
+<p>You can add two special attributes to script tag - "async" and "defer".<br>
+<pre><code><<!---->script async><<!---->/script>
+<<!---->script defer><<!---->/script>
+<<!---->script async defer><<!---->/script>
+</code></pre><br>"Async" attribute make your script being loaded during rest of your html being loaded. When your script finish loading, your code will be executed.<br><br>
+"Defer" attribute make your script being loaded during rest of your html being loaded. When your page finish loading, your code will be executed (precisely it will be executed just before DOMContentLoaded event).<br><br>
+<h2>Important note!</h2><br>
+When you decide to add your code in head part of your page, give your script tag "defer" attribute. Otherwise you will get loads of errors instead of results you wanted.<br><br>
+<pre><code><<!---->!DOCTYPE html>
+    <<!---->html lang="en">
+    <<!---->head>
+        <<!---->meta charset="UTF-8">
+        <<!---->meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <<!---->title>My first JavaScript code!<<!---->/title>
+        <<!---->script defer><<!---->/script> <<!---->!-- No errors :) -->
+    <<!---->/head>
+    <<!---->body>
+        <<!---->!-- Your html -->
+    <<!---->/body>
+<<!---->/html></code></pre>
+</p>
+<h1>Script type</h1>
+<p>
+    Script tag also can have type attribute. If we are talking about JavaScript, it has two possible values:
+    <pre><code><<!---->script type="text/javascript"><<!---->/script>
+<<!---->script type="module"><<!---->/script>
+</code></pre><br>
+The first value is practically dying, because browsers set this automatically (if it's not set manually of course). The second option is used if we use modules (more details about it will be on my website in the future).
+</p>
+<h1>Comments</h1>
+<p>
+    Ther are two types of comments in JS:<br>
+    <pre><code>// Comment numero uno - one-lined
+/*
+    Comment numero dos - multi-lined
+*/</code></pre><br>
+<h1>Some advices in terms of comments:</h1><br>
+<ol>
+    <li>Comments should be used for descriptions of blocks od code, not for every line. Don't add too much comments.</li><br>
+    <li>If you must take a break from coding and you see some bugs that need to be fixed of you want to add something to your code, add FIXME or TODO comments<br><br>
+    <pre><code class="js">// FIXME: fix this
+// TODO: add a slider</code></pre>
+    </li><br>
+    <li>Use hotkeys. It the most of editors it's <kbd>Ctrl</kbd> + <kbd>/</kbd></li>
+</ol>
+</p>
+<h1>Dialog boxes</h1>
+<p>
+    The are three types of dialog boxes in JS:
+    <pre><code class="js">alert("Your message"); // Displays alert box with a message
+confirm("Delete Windows folder"); // Displays a dialog box with two buttons - OK and Cancel. It returns true or false
+prompt("Your secret password","Input field default value"); // Displays a dialog box with input text field. Returns this field value</code></pre><br>
+You should use them if you want to communicate with the user. When you are little more advanced in JS you should stop use it and make your own pop-up window. JS built-in dialog boxes cannot be customized, they often don't fit to your website look. They are simple to use, but they don't look good.
+</p>
+<h1>Variables and operators</h1>
+<p>
+While your code is running at some point you will need to store some values to use them later. That's what variables do. There are two ways to create a variable:<br>
+<pre><code class="js">var myVariable1 = "some text"; // Old method
+let myVariable2 = "some other text"; // New method</code></pre><br>
+They are both good. The main differece between them is the range - "var" defined in a function cannot be used outside it, "let" defined in a block of code cannot be used outside it (you will understand it later):<br><br>
+<pre><code class="js">// function
+function myFunction(){
+    var myVariable = "Hello World";
+    alert(myVariable); // OK
+}
+alert(myVariable); // Throws an error
+
+// block
+{
+    let myVariable = "Hello World";
+    alert(myVariable); // OK
+}
+alert(myVariable); // Throws an error
+</code></pre><br>
+
+You can store many types of data in a variable:<br><br>
+<pre><code class="js">let num = 14000605; // A number
+let logic = true; // A boolean value - true/false
+let textString = "Hello world"; //A string - text value
+let undef = undefined; // undefined - displays when you use undefined variable or use a variable that you don;t have access to
+let nullValue = null; // null - nothing - being honest I don't know why it exist
+let list = [1,2,3,4] // array - a list that contains many variables of many types - more datails later
+let object = {value1:"value"} // object - more details later
+</code></pre><br>
+There are strict rules how to name your variables:<br><br>
+<pre><code class="js">// OK:
+let myAge;
+let my_age;
+let $my_age;
+let myAge0;
+
+// Thorws an error:
+let my-age; // "-" is an operator
+let 0myAge; // you cannot use numbers in the beginning
+let my age; // you cannot use spaces in variables names
+let mójWiek; // you cannot use special characters
+</code></pre><br>
+More details about variables naming <a href="https://mathiasbynens.be/notes/javascript-identifiers">here</a>
+<br>
+<br>
+You can also create a constant - variable that you won't be able to modify :<br><br>
+<pre><code class="js">const key = "1234567890";
+key = "0"; //Throws an error</code></pre><br>
+If you want to avoid errors like this - name your constants with upper case:<br><br>
+<pre><code class="js">const KEY = "1234567890";</code></pre><br>
+Programists have done this for a very long time and it's still used.
+</p>
+<h1>Operators</h1>
+<p>Operators are math in programming. All of the operators are presented in code below:
+<pre><code class="js">let x = 5;
+let y = 2;
+let z = 3
+
+// Basic math operators
+alert(x + y); // 5 + 2 = 7 
+alert(x - y); // 5 - 2 = 3
+alert(x * y); // 5 * 2 = 10
+alert(x / y); // 5 / 2 = 2.5
+alert(x % y); // 5 % 2 = 1, modulo, rest of divison
+alert(x ** y); // 5 ** 2 = 25, 5 to the power of 2
+
+z-- // same as z = z - 1
+z++ // same as z = z + 1
+
+// Assignment operators
+x = y // x = 2
+x += y // same as x = x + y
+x -= y // same as x = x - y
+x *= y // same as x = x * y
+x /= y // same as x = x / y
+x %= y // same as x = x % y
+
+// Comparison operators
+let a = 5
+let b = 7
+
+alert(a == b); // false, a equal to b
+alert(a != b); // true, a not equal to b
+alert(a === b); // false, a equal to b and the same data type
+alert(a !== b); // true, a not equal to b or different data type
+alert(a > b); // false, a is more than b
+alert(a < b); // true, a is less than b
+alert(a >= b); // false, a is more than or equal b
+alert(a <= b); // true, a is less than or equal b
+
+// Logic operators
+alert((a != b) && (a == b)); // false, AND operator
+alert((a != b) || (a == b)); // true, OR operator
+alert((a != b) ^ (a < b)); // false, XOR operator
+alert(!(a < b)); // false, NOT operator
+
+!false // it's funny because it's true</code></pre>
+</p>
+
+<h1>Conditional statements</h1>
+<p>
+    Conditional statements are used when you need to check if statement is true.<br>
+    <pre><code class="js">if(statement){
+    // do sth if statement == true
+}
+else if(otherStatement){
+    // do sth if otherStatement == true and statement == false
+}
+// in theory you can add infinite else if statements
+else{
+    // do sth if statement == false and otherStatement == false
+}</code></pre><br>
+Note that statement doesn't need to be a boolean - if we type sth that is not a boolean, JS will convert it to boolean. There are some values which are always converted to false:<br><br>
+<pre><code class="js">Boolean(false); //false
+Boolean(null); //false
+Boolean(undefined); //false
+Boolean(0); //false
+Boolean(NaN); //false
+Boolean(""); //false
+Boolean(document.all); //false</code></pre><br>
+Other values will be always converted to true.
+<br><br>
+There is sth called ternary operator. It's shortened version of if/else statement:<br><br>
+<pre><code class="js">let variable = (statement) ? if_true : if_false;</code></pre><br>
+<pre><code class="js">let i;
+if(true){
+    i = 10;
+}
+else{
+    i = 5;
+}
+
+// The same using ternary operator
+let i = (true) ? 10 : 5;
+</code></pre><br><br>
+Other method to create conditions is switch. It allows you to check if variable equal something:<br><br>
+<pre><code class="js">let variable = prompt("Enter code:");
+switch(variable){
+    case 0:
+    // some code
+    break;
+
+    case 1:
+    // some other code
+    break;
+
+    default:
+    // other values than 0 and 1
+}</code></pre>
+</p>
+<h1>Loops</h1>
+<p>
+    If you want to do sth mutliple times, you should use a loop.
+    There are a few times of loops. First is "for" loop. It executes code a specific number of times:<br>
+    <pre><code class="js">for(variable_iniciation; statement_that_ends_the_loop; variable_change){
+    // do sth  
+}
+
+// loop from 0 to 99, executes 100 times
+for(let i = 0; i < 100; i++){
+    // do sth  
+}
+
+// loop form 100 to 1, also executes 100 times
+for(let i = 100; i > 0; i--){
+    // do sth  
+}
+
+// infinite loop - not recommended - it's a mass of lags
+for(;;){
+    // do sth infinite times
+}</code></pre><br>
+"For" loop can also bo used with "of" and "in" keywords. The first one allows you to iterate in arrays, second to iterate in objects (better explanations in the future):<br><br>
+<pre><code class="js">for(let user of users){
+    // do sth with user
+}
+
+for(let data in object){
+    // do sth with data
+}</code></pre><br>
+
+
+There are also loops that execute code only if some statement is true - "while" and "do-while" loops. The main difference between them is that "do-while" loop will be executed at least one time:<br><br>
+<pre><code class="js">while(statement){
+    // do sth or do nothing
+}
+
+do{
+    //do sth at least one time
+}while(statement);</code></pre><br>
+You can do loops in a loop:<br><br>
+<pre><code class="js">for(let x = 0; x < 100; x++){
+    for(let y = 0; y < 100; y++){
+        // do sth multidimesional
+    }
+}</code></pre><br>
+If you want the loop to stop executing code, you should use break method. If you want the loop to skip loop iteration, you should use continue method.<br><br>
+<pre><code class="js">let is_user_active = false;
+for(let user of active_users){
+    if(user == "TheShaman"){
+        is_user_active = true;
+        break; // you don't need to search anymore
+    }
+}</code></pre><br>
+<pre><code class="js">for(let user of users){
+    if(user == "noobmaster69"){
+        continue; // noobmaster69 has been banned - continue
+    }
+    // do sth with unbanned users
+}</code></pre>
+</p>
+<h1>Conclusion</h1>
+<p>
+You have come into secret knowledge of basics of JavaScript. There are loads of other methods, apis for you to discover. Now, after reading this article, you should chill, finish your coffee, etc. You still have a lot to learn.
+</p></article>
+        </section>
+    </main>
+    <footer></footer>
+    
+    <script src="https://kit.fontawesome.com/c947efe878.js" crossorigin="anonymous"></script>
+    <script src="js/article beh.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block)
+            })
+        })
+    </script>
+</body>
+
+</html>

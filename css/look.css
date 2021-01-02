@@ -207,11 +207,11 @@ article img{
     padding-left: 50px;
     padding-bottom: 50px;
     text-align: center;
-    font-size: 150%;
+    
 }
 #contact > div > div{
     display: inline-block;
-    text-align: left;
+    /*text-align: left;*/
     vertical-align: middle;
     margin:30px;
     
@@ -275,6 +275,9 @@ footer{
     #gamesattach{
         display: none;
     }
+    #contact > div{
+        font-size: 100%;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -284,6 +287,9 @@ footer{
     }
     #hello > div,#games > div,#articles-banner > div{
         font-size: 200%;
+    }
+    #contact > div{
+        font-size: 150%;
     }
 }
 

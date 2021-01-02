@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="css/highlights/atom-one-dark.css">
     <link rel="stylesheet" href="css/article look.css">
     <title>Lorem ipsum dolor sit amet - TheShaman</title>
 </head>
@@ -67,7 +69,12 @@
                 <p>Nulla ultrices porttitor sollicitudin. Duis dignissim sed leo sodales fermentum. Aenean malesuada sagittis sapien vel elementum. Nulla facilisi. Mauris ac accumsan mi. Pellentesque condimentum dolor id dui dapibus, quis interdum erat pulvinar. Morbi nisi augue, auctor vel justo id, aliquam accumsan nunc. Donec tortor nunc, consequat id condimentum nec, rutrum luctus nisi. Ut gravida arcu in tortor pulvinar suscipit. Praesent quis justo felis. Integer vulputate ex mi, eu pretium quam tempor ac.</p>
 
                 <p>Mauris risus ex, fermentum quis dolor at, sagittis condimentum sem. Sed mattis dolor at elementum placerat. Ut faucibus ullamcorper velit nec laoreet. Aliquam tristique metus vel libero maximus iaculis. Aenean ac vulputate ligula. Aenean at orci nec risus lobortis rutrum eu eu felis. Maecenas non porttitor quam. In hac habitasse platea dictumst. Proin nisi lectus, consectetur vitae tincidunt quis, scelerisque a dolor. Donec venenatis mauris a massa imperdiet, nec scelerisque felis ultricies. In faucibus tortor ipsum.</p>
-
+                <pre>
+                    <code class="js">//Hello world
+function hello(){
+    alert("Hello world");
+}</code>
+                </pre>
                 <p>Vestibulum suscipit erat accumsan felis sagittis egestas. Curabitur congue urna ut sagittis tempus. Integer tortor nisi, interdum eget tristique quis, maximus non risus. Quisque hendrerit lectus id maximus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra nibh nibh, nec commodo mauris pellentesque sit amet. Ut eleifend risus et arcu pulvinar volutpat.</p>
 
                 <p>Nulla maximus, mi vitae venenatis eleifend, diam purus rutrum augue, sed porttitor orci orci ac ante. Pellentesque laoreet, nisi a scelerisque mollis, elit metus molestie sem, ut vehicula dui mi eu nunc. Vivamus ornare dictum ligula, a suscipit elit tristique in. Cras non pretium velit. Ut purus ex, pellentesque vitae rutrum sed, gravida non erat. Pellentesque hendrerit magna enim, in congue purus faucibus quis. Praesent sodales imperdiet augue vel egestas. Vivamus hendrerit mauris vel vestibulum congue.</p>
@@ -79,6 +86,14 @@
     
     <script src="https://kit.fontawesome.com/c947efe878.js" crossorigin="anonymous"></script>
     <script src="js/article beh.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block)
+            })
+        })
+    </script>
 </body>
 
 </html>

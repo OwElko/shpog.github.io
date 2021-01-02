@@ -210,7 +210,7 @@ article img{
     
 }
 #contact > div > div{
-    display: inline-block;
+    /*display: inline-block;
     /*text-align: left;*/
     vertical-align: middle;
     margin:30px;

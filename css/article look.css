@@ -143,6 +143,10 @@ article img,article video,article iframe,article audio,article object{
 article iframe,article audio{
     width:100%;
 }
+article code{
+ padding:15px;
+ border-radius:15px;
+}
 /*article audio{
     margin-top: 25px;
     margin-bottom: 25px;

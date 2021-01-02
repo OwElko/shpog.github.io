@@ -97,6 +97,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/article look.css">
+    <link rel="stylesheet"
+      href="css/highlights/atom-one-dark.css">
     <title>${title} - The Shaman</title>
 </head>
 <body>
@@ -131,6 +133,14 @@
     
     <script src="https://kit.fontawesome.com/c947efe878.js" crossorigin="anonymous"></script>
     <script src="js/article beh.js"><\/script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block)
+            })
+        })
+    </script>
 </body>
 
 </html>`

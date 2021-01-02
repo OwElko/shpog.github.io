@@ -270,7 +270,7 @@ footer{
         width:83%;
     }
     #hello > div,#games > div,#articles-banner > div{
-        font-size: 150%;
+        font-size: 100%;
     }
     #gamesattach{
         display: none;

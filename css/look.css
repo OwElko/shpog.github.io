@@ -224,7 +224,7 @@ article img{
 #mail{
     font-size: 250%;
     vertical-align: middle;
-    margin-right:15px;
+    /*margin-right:15px;*/
 }
 
 main,footer{

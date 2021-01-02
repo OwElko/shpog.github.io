@@ -41,7 +41,6 @@ nav a, header > h1 > a{
     color: white;
 }
 nav a{
-    margin-left:5px;
     padding:10px;
     border-radius: 10px;
 }

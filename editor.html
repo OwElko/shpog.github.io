@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+</head>
+
+<body>
+    <div>
+        <input id="title" placeholder="Title"><br>
+        <input type="URL" id="url" placeholder="Banner URL"><br>
+        <textarea placeholder="Content"></textarea>
+        <button onclick="generate()">Download</button>
+        <code id="text">Your code goes here. Copy it to clipboard after clicking < Download ></code>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #101010;
+            color: white;
+            font-size: 105%;
+            
+        }
+
+        div {
+            width: 75%;
+            margin: 15px auto;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #text {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding:15px;
+            background: #151515;
+            border-radius: 15px;
+            position: relative;
+            left:10px;
+        }
+
+        input,
+        textarea,
+        button {
+            background: #151515;
+            border: none;
+            border-radius: 15px;
+            width: 100%;
+            min-height: 50px;
+            margin: 10px;
+            padding: 15px;
+        }
+
+        textarea {
+            min-height: 500px;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+    <script>
+        function copy(text) {
+            /* Get the text field */
+            var copyText = document.createElement("input");
+            copyText.value = text
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+        }
+        function truncate(str) {
+            if (str.length <= 500) { return str; }
+            const subString = str.substr(0, 499); // the original check
+            return subString.substr(0, subString.lastIndexOf(" ")) + "&hellip;";
+        }
+        function download(content, name, type) {
+            let a = document.createElement("a");
+            let file = new Blob([content], { type: type });
+            a.href = URL.createObjectURL(file);
+            a.download = name;
+            a.click()
+        }
+        function generate() {
+            let title = document.querySelector('#title').value
+            let banner = document.querySelector('#url').value
+            let html = document.querySelector('textarea').value
+            let content = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/article look.css">
+    <title>${title} - The Shaman</title>
+</head>
+<body>
+    <style>
+        :root {
+            --banner-url:url("${banner}")
+        }
+        #banner{
+            background: var(--banner-url);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <header></header>
+    <main>
+        <section>
+            <a href="#" id="up">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+            <div id="banner">
+                <span class="cover"></span>
+                <div>
+                    <div>
+                        <h1>${title}</h1>
+                    </div>
+                </div>
+            </div>
+            <article>${html}</article>
+        </section>
+    </main>
+    <footer></footer>
+    
+    <script src="https://kit.fontawesome.com/6727c5e6c0.js"><\/script>
+    <script src="js/article beh.js"><\/script>
+</body>
+
+</html>`
+            let filename = `${title.toLowerCase().replace(/ /g, "-")}.html`
+            let e = document.createElement('p')
+            e.innerHTML = html
+            download(content, filename, `text/html`)
+            let tocopy = `<article>
+                    <a href="${filename}">
+                    <h1>${title}</h1>
+                    <img src="${banner}">
+                    ${truncate(e.innerText)}
+                    </a>
+            </article>`
+            document.querySelector('#text').innerText = tocopy
+            copy(tocopy)
+        }
+    </script>
+</body>
+
+</html>

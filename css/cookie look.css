@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background:black;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    background:#101010;
+    padding:15px;
+    z-index: 100;
+}
+header h1,footer h1{
+    font-size: 100%;
+    display: inline-block;
+}
+nav{
+    display: inline-block;
+    position: fixed;
+    right:25px;
+}
+nav a, header > h1 > a{
+    text-decoration: none;
+    color: white;
+}
+nav a{
+    margin-left:5px;
+    padding:10px;
+    border-radius: 10px;
+}
+nav a:hover{
+    background: white;
+    color:black;
+}
+
+main{
+    /*background:#23272a;*/
+    /*background: #ffae00;
+    color:black;*/
+    background: #151515;
+}
+
+section{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+article,footer>div{
+    margin:0 auto;
+    padding:10px;
+}
+
+article{
+    position:relative;
+    padding:15px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background: #151515;
+    border-radius: 15px;
+    z-index: 50;
+}
+article>p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+article a{
+    color:white;
+}
+/*article audio{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}*/
+
+main,footer{
+    position: relative;
+    top:50px;
+}
+
+
+
+
+
+
+/* Footer */
+footer{
+    width:100%;
+    background:#101010;
+    text-align: center;
+    padding:25px;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    article,footer>div{
+        width:83%;
+    }
+    #banner > div{
+        font-size: 150%;
+    }
+    #gamesattach{
+        display: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    article,footer>div{
+        max-width:500px;
+    }
+    #banner > div{
+        font-size: 200%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    article,footer>div{
+        max-width:668px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    article,footer>div{
+        max-width:892px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    article,footer>div{
+        max-width:1100px;
+    }
+}

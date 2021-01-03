@@ -9,6 +9,42 @@
 </head>
 
 <body>
+    <div id="cookies">
+        <p>
+            By using our website, you agree to our
+            <a href="cookies.html">cookie policy</a>
+        </p>
+        <button onclick="document.querySelector('#cookies').remove();localStorage.TheShamanCookiePolicyDisplayed = 'yes'">OK</button>
+    </div>
+    <style>
+        #cookies{
+            position:fixed;
+            background: #101010;
+            border-radius: 10px;
+            bottom:0;
+            right:0;
+            z-index: 1000;
+            padding:15px;
+            margin:10px;
+        }
+        #cookies button{
+            margin-top:10px;
+            width:100%;
+            color:white;
+            background:#151515;
+            border:none;
+            padding:5px;
+            border-radius: 10px;
+        }
+        #cookies a{
+            color:white;
+        }
+    </style>
+    <script>
+        if(localStorage.TheShamanCookiePolicyDisplayed == 'yes'){
+            document.querySelector('#cookies').remove()
+        }
+    </script>
     <header></header>
     <main>
         <section id="about">
@@ -63,9 +99,12 @@
                 <a href="javascript-basics-tutorial.html">
                     <h1>JavaScript Basics Tutorial</h1>
                     <img src="../img/05.jpg">
-                    After you finished learning HTML and CSS it's useful to make your page more interactive. In this point you encounter the king of front-end websites - JavaScript. For those who did something in C++ or C# it won't be hard - JS is weird, but while learning it, you will discover that JS is more simple than these...
+                    After you finished learning HTML and CSS it's useful to make your page more interactive. In this
+                    point you encounter the king of front-end websites - JavaScript. For those who did something in C++
+                    or C# it won't be hard - JS is weird, but while learning it, you will discover that JS is more
+                    simple than these...
                 </a>
-</article>
+            </article>
 
         </section>
         <section id="contact">

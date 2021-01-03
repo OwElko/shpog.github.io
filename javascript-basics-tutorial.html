@@ -8,7 +8,42 @@
       href="css/highlights/atom-one-dark.css">
     <title>JavaScript Basics Tutorial - The Shaman</title>
 </head>
-<body>
+<body><div id="cookies">
+    <p>
+        By using our website, you agree to our
+        <a href="cookies.html">cookie policy</a>
+    </p>
+    <button onclick="document.querySelector('#cookies').remove();localStorage.TheShamanCookiePolicyDisplayed = 'yes'">OK</button>
+</div>
+<style>
+    #cookies{
+        position:fixed;
+        background: #101010;
+        border-radius: 10px;
+        bottom:0;
+        right:0;
+        z-index: 1000;
+        padding:15px;
+        margin:10px;
+    }
+    #cookies button{
+        margin-top:10px;
+        width:100%;
+        color:white;
+        background:#151515;
+        border:none;
+        padding:5px;
+        border-radius: 10px;
+    }
+    #cookies a{
+        color:white;
+    }
+</style>
+<script>
+    if(localStorage.TheShamanCookiePolicyDisplayed == 'yes'){
+        document.querySelector('#cookies').remove()
+    }
+</script>
     <style>
         :root {
             --banner-url:url("../img/05.jpg")
